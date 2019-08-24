@@ -12,6 +12,7 @@ import sys
 def run_sensor(pin_num):
     GPIO.setwarnings(True)
     GPIO.setmode(GPIO.BCM)
+    pin_num = int(pin_num)
 
     instance = dht11.DHT11(pin=pin_num)
 
