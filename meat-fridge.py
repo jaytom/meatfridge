@@ -8,7 +8,7 @@ import datetime
 
 # read data using pin 14
 
-def run_sensor(pin_num)
+def run_sensor(pin_num):
     GPIO.setwarnings(True)
     GPIO.setmode(GPIO.BCM)
 
