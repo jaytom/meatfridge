@@ -13,11 +13,11 @@ def run_sensor(pin_num):
     GPIO.setwarnings(True)
     GPIO.setmode(GPIO.BCM)
 
-    nstance = dht11.DHT11(pin=pin_num)
+    instance = dht11.DHT11(pin=pin_num)
 
     try:
         while True:
-            result = instance_0.read()
+            result = instance.read()
             if result.is_valid():
                 print("Last valid input: " + str(datetime.datetime.now()))
                 print("Temperature: %-3.1f C" % result.temperature)
