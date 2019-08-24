@@ -20,16 +20,26 @@ def open_worksheet():
     sheet = gc.open('meat-fridge').sheet1
     return sheet
 
-def find_last_row(worksheet):
-    rows = worksheet.col_values(1)
+def find_last_row(column_num, worksheet):
+    rows = worksheet.col_values(column_num)
     
     return len(rows)
 
-def update_record(time,temp,humidity):
+def update_record(sensor_num ,time,temp,humidity):
     
-    worksheet = open_worksheet()
-    empty_row = find_last_row(worksheet) + 1
+    if sensor_num == 4:
+        worksheet = open_worksheet()
+        empty_row = find_last_row(1,worksheet) + 1
     
-    worksheet.update_cell(empty_row, 1, time)
-    worksheet.update_cell(empty_row, 2, temp)
-    worksheet.update_cell(empty_row, 3, humidity)
+        worksheet.update_cell(empty_row, 1, time)
+        worksheet.update_cell(empty_row, 2, temp)
+        worksheet.update_cell(empty_row, 3, humidity)
+
+
+    if sensor_num == 17:
+        worksheet = open_worksheet()
+        empty_row = find_last_row(5,worksheet) + 1
+    
+        worksheet.update_cell(empty_row, 5, time)
+        worksheet.update_cell(empty_row, 6, temp)
+        worksheet.update_cell(empty_row, 7, humidity)
