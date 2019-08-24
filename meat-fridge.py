@@ -20,11 +20,11 @@ def run_sensor(pin_num):
         while True:
             result = instance.read()
             if result.is_valid():
-                print("Last valid input: " + str(datetime.datetime.now()))
+                print("Last valid input for sensor " + str(datetime.datetime.now()))
                 print("Temperature: %-3.1f C" % result.temperature)
                 print("Humidity: %-3.1f %%" % result.humidity)
                 gsheet.update_record(pin_num, str(datetime.datetime.now()),result.temperature, result.humidity)
-                time.sleep(60)
+                time.sleep(600)
             else:
                 print(result.error_code)
                 time.sleep(10)
