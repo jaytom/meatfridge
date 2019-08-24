@@ -30,3 +30,7 @@ def run_sensor(pin_num)
     except KeyboardInterrupt:
         print("Cleanup")
         GPIO.cleanup()
+
+if __name__ == '__main__':
+    # Map command line arguments to function arguments.
+    run_sensor(*sys.argv[1:])
