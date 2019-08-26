@@ -44,5 +44,5 @@ def update_record(sensor_num ,time,temp,humidity):
             worksheet.update_cell(empty_row, 6, temp)
             worksheet.update_cell(empty_row, 7, humidity)
     except:
-        print "Google login API issue"
+        print ("Google login API issue")
         pass
